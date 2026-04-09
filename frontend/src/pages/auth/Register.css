@@ -117,3 +117,22 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+
+/* Thay thế hoặc bổ sung cho gender-options */
+
+.role-options {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    /* Nhỏ lại một chút để vừa hàng */
+    white-space: nowrap;
+}
