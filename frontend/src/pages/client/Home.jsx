@@ -25,7 +25,6 @@
 //   );
 // }
 import React from 'react';
-// Import Header mới từ thư mục Common
 import Header from '../../components/common/Header/Header'; 
 import BackGroundImage from '../../assets/background_home_1.jpg';
 import './Home.css';

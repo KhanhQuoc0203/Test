@@ -1,0 +1,88 @@
+.introduce-container {
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    /* Cách ra khỏi Navbar tuyệt đối */
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.introduce-layout {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* Sidebar Styling */
+
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    color: #2e7d32;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.sidebar li:hover {
+    color: #2e7d32;
+    background-color: #f0f0f0;
+}
+
+.sidebar li.active {
+    background-color: #dcedc8;
+    /* Màu xanh nhạt giống ảnh */
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Content Styling */
+
+.main-content {
+    flex-grow: 1;
+}
+
+.main-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    margin: 25px 0 10px;
+    font-size: 20px;
+}
+
+.content-section p,
+.content-section li {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}

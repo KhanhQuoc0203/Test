@@ -1,15 +1,28 @@
-.header-container {
+/* .header-container {
     position: fixed;
-    /* Giữ cố định ở trên cùng */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Đảm bảo nằm trên các phần tử khác */
-    background-color: #1a1a1a;
-    /* Màu đen xám chủ đạo */
-    border-bottom: 1px solid #333;
+    background-color: rgba(53, 53, 53, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px 0;
+    transition: all 0.3s ease;
+} */
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 10px 0;
+    transition: all 0.4s ease;
 }
 
 .navbar {
@@ -19,46 +32,90 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: 60px;
+    height: 70px;
 }
 
 .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     color: #ffffff;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .navbar-logo img {
-    height: 40px;
+    height: 45px;
 }
+
+
+/* --- CHỈNH SỬA PHẦN NAV LINKS --- */
 
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 10px;
+    /* Giảm gap lại vì padding của thẻ a sẽ tự tạo khoảng cách */
+    padding: 5px 15px;
+    /* Điều chỉnh lại padding cho dải menu tổng */
+    background-color: rgba(64, 61, 61, 0.652);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-links li a {
     text-decoration: none;
-    color: #cccccc;
-    /* Màu xám nhạt cho text */
-    font-size: 16px;
-    transition: color 0.3s;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 30px;
+    /* Tạo hình bo tròn/viên thuốc */
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.navbar-links li a:hover,
+
+/* --- HIỆU ỨNG VÒNG TRÒN XANH KHI HOVER --- */
+
+
+/* .navbar-links li a:hover,
 .navbar-links li.active a {
     color: #ffffff;
-    /* Sáng lên khi hover hoặc active */
+    background-color: rgba(91, 212, 35, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(91, 212, 35, 0.5);
+} */
+
+.navbar-links li.active a {
+    background-color: #5bd423;
+    /* Màu xanh đậm cho trang đang chọn */
+    color: #1a1a1a;
+    /* Chữ đen cho nổi trên nền xanh */
 }
+
+.navbar-links:hover {
+    border-color: rgba(38, 222, 5, 0.3);
+    box-shadow: 0 4px 15px rgba(38, 222, 5, 0.3);
+}
+
+
+/* --- CÁC PHẦN CÒN LẠI --- */
 
 .navbar-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .btn-search,
@@ -66,25 +123,37 @@
     background: none;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.btn-search:hover,
+.btn-user:hover {
+    transform: scale(1.1);
 }
 
 .btn-search img,
 .btn-user img {
-    width: 20px;
+    width: 22px;
     filter: invert(1);
-    /* Chuyển icon màu đen sang trắng để nổi trên nền tối */
 }
 
 .btn-book {
-    background-color: #444;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
+    background-color: #5bd423;
+    color: #1a1a1a;
+    padding: 10px 22px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 14px;
-    transition: background 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(38, 222, 5, 0.3);
 }
 
-.btn-book:hover {
-    background-color: #666;
-}
+
+/* .btn-book:hover {
+    background-color: #ffffff;
+    color: #5bd423;
+    transform: translateY(-2px);
+} */
