@@ -48,7 +48,7 @@ export default function Login() {
               {/* Số điện thoại hoặc tên đăng nhập */}
               <label>Tên đăng nhập: <span>*</span></label>
               <input 
-                type="text" 
+                type="text"
                 name="username" 
                 placeholder="Nhập tên đăng nhập" 
                 value={loginData.username}

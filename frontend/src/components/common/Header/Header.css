@@ -1,0 +1,90 @@
+.header-container {
+    position: fixed;
+    /* Giữ cố định ở trên cùng */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Đảm bảo nằm trên các phần tử khác */
+    background-color: #1a1a1a;
+    /* Màu đen xám chủ đạo */
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-logo img {
+    height: 40px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #cccccc;
+    /* Màu xám nhạt cho text */
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover,
+.navbar-links li.active a {
+    color: #ffffff;
+    /* Sáng lên khi hover hoặc active */
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-search,
+.btn-user {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-search img,
+.btn-user img {
+    width: 20px;
+    filter: invert(1);
+    /* Chuyển icon màu đen sang trắng để nổi trên nền tối */
+}
+
+.btn-book {
+    background-color: #444;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-book:hover {
+    background-color: #666;
+}
