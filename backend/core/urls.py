@@ -23,8 +23,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from users.views import LoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/', include('users.urls')), 
     path('api/tours/', include('tours.urls')), 
+    path('api/login/', LoginView.as_view(), name='login_direct'),
 ]

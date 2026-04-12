@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'rest_framework_simplejwt',
     'users',
     'tours',
     'bookings',
@@ -85,8 +86,8 @@ DATABASES = {
         'NAME': 'TourBooking',
         'USER': 'sa',
         'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '1433',
+        'HOST': 'localhost\\SQLEXPRESS01',
+        'PORT': '',  # Thường để trống cho bản Express hoặc đổi theo cấu hình thực tế
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
         },
@@ -130,6 +131,27 @@ USE_TZ = True
 STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'users.User'
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173", # Cổng mặc định của Vite (Frontend)
+    "http://localhost:5172",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+    "http://localhost:5176",
+    "http://127.0.0.1:5172",
     "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5175",
+    "http://127.0.0.1:5176",
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
