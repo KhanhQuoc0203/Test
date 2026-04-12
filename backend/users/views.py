@@ -3,8 +3,7 @@ from rest_framework.response import Response
 from .serializers import RegisterSerializer
 from django.contrib.auth import authenticate
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
@@ -25,9 +24,11 @@ class LoginView(APIView):
         user = authenticate(username=username, password=password)
         
         if user is not None:
-            # Nếu nhóm chưa cài Token, tạm thời trả về thông báo thành công
+            refresh = RefreshToken.for_user(user)
             return Response({
                 "message": "Đăng nhập thành công!",
+                "access_token": str(refresh.access_token),
+                "refresh_token": str(refresh),
                 "username": user.username,
                 "role": user.role
             }, status=status.HTTP_200_OK)
