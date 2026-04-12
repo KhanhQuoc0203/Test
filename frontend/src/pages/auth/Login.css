@@ -128,3 +128,15 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-error {
+    border-bottom: 2px solid red !important;
+}

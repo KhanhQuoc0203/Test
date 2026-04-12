@@ -136,3 +136,15 @@
     /* Nhỏ lại một chút để vừa hàng */
     white-space: nowrap;
 }
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.input-error {
+    border-bottom: 2px solid red !important;
+}
