@@ -1,29 +1,3 @@
-// import React from 'react';
-// import Navbar from '../../components/layout/Navbar';
-// import BackGroundImage from '../../assets/background_home_1.jpg';
-// import './Home.css';
-
-// export default function Home() {
-//   return (
-//     <div className="home-container">
-//       <Navbar />
-      
-//       <header 
-//         className="hero-section" 
-//         style={{ backgroundImage: `url(${BackGroundImage})` }}
-//       >
-       
-//         <div className="hero-overlay"></div>
-        
-//         <div className="hero-content">
-//           <h1 className="hero-title">TOURS DU LỊCH</h1>
-//         </div>
-//       </header>
-      
-      
-//     </div>
-//   );
-// }
 
 import React, { useEffect, useState } from 'react';
 import BackGroundImage from '../../assets/background_home_1.jpg';

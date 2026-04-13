@@ -1,0 +1,52 @@
+.tour-detail-container {
+    padding-top: 100px;
+    /* Tránh bị Navbar đè */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tour-header-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.tour-info-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tour-main-info {
+    flex: 7;
+}
+
+.tour-booking-card {
+    flex: 3;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tour-price {
+    color: #ff8a00;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.btn-book-now {
+    width: 100%;
+    background: #6ab04c;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}

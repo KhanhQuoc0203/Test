@@ -17,6 +17,7 @@ export default function Register() {
   });
 
   const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +27,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ❌ Validate mật khẩu
+    // Validate
     if (formData.password !== formData.confirmPassword) {
       setErrorMsg("Mật khẩu xác nhận không khớp!");
       return;
@@ -47,35 +48,22 @@ export default function Register() {
       });
 
       setErrorMsg('');
-      navigate('/login');
+      setSuccessMsg("🎉 Đăng ký thành công! Đang chuyển sang đăng nhập...");
+
+      setTimeout(() => {
+        navigate('/login');
+      }, 1500);
+
     } catch (error) {
       console.error("Lỗi đăng ký:", error.response?.data);
 
-      const data = error.response?.data;
-      let backendMsg = "Đăng ký thất bại!";
-
-      if (data) {
-        if (typeof data === 'string') {
-          backendMsg = data;
-        } else if (data.message) {
-          backendMsg = data.message;
-        } else if (data.error) {
-          backendMsg = data.error;
-        } else {
-          // Xử lý các lỗi từ serializer (ví dụ: { "username": ["..."], "phone": ["..."] })
-          const errorParts = Object.entries(data).map(([field, messages]) => {
-            const fieldName = field === 'username' ? 'Tên đăng nhập' : 
-                              field === 'phone' ? 'Số điện thoại' : 
-                              field === 'email' ? 'Email' : field;
-            return `${fieldName}: ${messages.join(', ')}`;
-          });
-          if (errorParts.length > 0) {
-            backendMsg = errorParts.join(' | ');
-          }
-        }
-      }
+      const backendMsg =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        "Đăng ký thất bại!";
 
       setErrorMsg(backendMsg);
+      setSuccessMsg('');
     }
   };
 
@@ -188,6 +176,9 @@ export default function Register() {
 
             {/* ERROR */}
             {errorMsg && <p className="error-message">{errorMsg}</p>}
+
+            {/* SUCCESS */}
+            {successMsg && <p className="success-message">{successMsg}</p>}
 
             {/* BUTTON */}
             <button type="submit" className="btn-finish">

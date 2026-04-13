@@ -1,13 +1,14 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL =
+    import.meta.env.VITE_API_URL;
 
-export const getTours = async () => {
-  try {
-    const response = await axios.get(`${API_URL}/tours/`);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching tours:", error);
-    throw error;
-  }
+export const getTours = async() => {
+    try {
+        const response = await axios.get(`${API_URL}/tours/`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching tours:", error);
+        throw error;
+    }
 };

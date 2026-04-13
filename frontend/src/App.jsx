@@ -6,6 +6,8 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Introduce from "./pages/client/Introduce";
 import Header from './components/common/Header/Header'; 
+import TourDetail from './pages/client/TourDetail/TourDetail';
+
 
 
 function AppContent() {
@@ -20,6 +22,7 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/introduce" element={<Introduce />} />
+        <Route path="/tours/:id" element={<TourDetail />} />
       </Routes>
     </>
   );
