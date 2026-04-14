@@ -1,42 +1,59 @@
 .tour-detail-container {
-    padding-top: 100px;
-    /* Tránh bị Navbar đè */
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-.tour-header-image img {
-    width: 100%;
+.tour-hero {
+    position: relative;
     height: 450px;
-    object-fit: cover;
     border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
 
-.tour-info-layout {
+.tour-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+}
+
+.tour-content-layout {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 40px;
 }
 
-.tour-main-info {
+.tour-main {
     flex: 7;
 }
 
-.tour-booking-card {
+.tour-sidebar {
     flex: 3;
+}
+
+.booking-card {
     border: 1px solid #ddd;
     padding: 25px;
     border-radius: 12px;
-    height: fit-content;
     position: sticky;
-    top: 120px;
+    top: 100px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.tour-price {
+.price-amount {
     color: #ff8a00;
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin: 10px 0 20px;
 }
 
 .btn-book-now {
@@ -45,8 +62,15 @@
     color: white;
     border: none;
     padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
     border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
+    font-size: 18px;
+}
+
+.trust-badges {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

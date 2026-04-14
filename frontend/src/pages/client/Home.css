@@ -41,3 +41,70 @@ body {
     font-size: 4rem;
     margin-bottom: 20px;
 }
+
+.tour-list-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+
+/* Chia lưới: 3 hoặc 4 tour trên 1 hàng */
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tour-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    /* Hiệu ứng bay lên khi di chuột vào */
+}
+
+.tour-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tour-info {
+    padding: 15px;
+}
+
+.tour-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tour-price {
+    color: #ff8a00;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tour-card-link {
+    text-decoration: none;
+    /* Xóa gạch chân */
+    color: inherit;
+    /* Giữ nguyên màu chữ gốc */
+    display: block;
+}
+
+.tour-card-link:hover {
+    cursor: pointer;
+}

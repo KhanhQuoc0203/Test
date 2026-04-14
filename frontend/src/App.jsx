@@ -10,6 +10,7 @@ import TourDetail from './pages/client/TourDetail/TourDetail';
 
 
 
+
 function AppContent() {
   const location = useLocation();
   // Ẩn Navbar trên trang đăng nhập và đăng ký
