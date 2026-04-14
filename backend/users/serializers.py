@@ -21,3 +21,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         # Mã hóa mật khẩu trước khi lưu
         user = User.objects.create_user(**validated_data)
         return user
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'phone', 'role')
