@@ -74,3 +74,20 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.creator-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.creator-info p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.creator-info strong {
+    color: #333;
+}
