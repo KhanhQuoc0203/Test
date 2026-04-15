@@ -21,3 +21,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         # Mã hóa mật khẩu trước khi lưu
         user = User.objects.create_user(**validated_data)
         return user
+#XAT THUC OTP
+class VerifyOTPSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField(max_length=6)
+
+class ResetPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField(max_length=6)
+    new_password = serializers.CharField(min_length=8, write_only=True)
