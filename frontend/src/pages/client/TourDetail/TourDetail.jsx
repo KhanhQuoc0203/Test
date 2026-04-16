@@ -61,6 +61,13 @@ export default function TourDetail() {
                             <p className="price-tag">Giá từ:</p>
                             <h2 className="price-amount">{Number(tour.price).toLocaleString()} VNĐ</h2>
                             <button className="btn-book-now">ĐẶT NGAY</button>
+                            
+                            {/* Thông tin người tạo (Mới thêm) */}
+                            <div className="creator-info">
+                                <p><strong>Người tổ chức:</strong> {tour.creator_name}</p>
+                                <p><strong>Liên hệ:</strong> {tour.creator_phone}</p>
+                            </div>
+
                             <div className="trust-badges">
                                 <span>Xác nhận tức thì</span>
                                 <span>Hỗ trợ 24/7</span>

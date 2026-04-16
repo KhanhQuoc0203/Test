@@ -23,9 +23,10 @@ export default function Login() {
     try {
       const response = await axiosClient.post('users/login/', loginData);
 
-      // Lưu token
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+      // Lưu token và thông tin user mới
+      localStorage.setItem('access_token', response.data.access_token);
+      localStorage.setItem('username', response.data.username);
+      localStorage.setItem('role', response.data.role);
 
       setErrorMsg('');
       navigate('/');
