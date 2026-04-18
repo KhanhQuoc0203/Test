@@ -64,8 +64,6 @@ export default function Header() {
               ) : (
                 <>
                   <Link to="/login" className="auth-link">Đăng nhập</Link>
-                  <span className="auth-divider">/</span>
-                  <Link to="/register" className="auth-link">Đăng ký</Link>
                 </>
               )}
             </div>
