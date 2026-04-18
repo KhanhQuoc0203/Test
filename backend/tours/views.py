@@ -9,7 +9,7 @@ class TourCreateView(generics.ListCreateAPIView):
     queryset = Tour.objects.all()
     serializer_class = TourSerializer
 
-# Lấy chi tiết 1 tour (Dùng APIView để Khánh dễ tùy biến logic)
+# Lấy chi tiết 1 tour
 class TourDetailAPIView(APIView):
     def get(self, request, pk):
         try:
