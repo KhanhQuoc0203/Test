@@ -37,6 +37,8 @@ export default function Home() {
   useEffect(() => {
     const fetchTours = async () => {
       try {
+        // const data = await getTours();
+        // await new Promise(resolve => setTimeout(resolve, 2000)); // delay 2s
         const data = await getTours();
         console.log("DATA:", data);
 
