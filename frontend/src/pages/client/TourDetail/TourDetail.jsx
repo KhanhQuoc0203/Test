@@ -28,7 +28,7 @@ export default function TourDetail() {
 
     return (
         <div className="tour-detail-page">
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="tour-detail-container">
                 {/* Phần 1: Ảnh tiêu đề lớn */}
                 <div className="tour-hero">

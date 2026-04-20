@@ -9,7 +9,7 @@ import Introduce from "./pages/client/Introduce";
 import Header from './components/common/Header/Header'; 
 import TourDetail from './pages/client/TourDetail/TourDetail';
 import Profile from './pages/client/Profile';
-
+import SearchResult from './pages/client/SearchResult/SearchResult';
 
 
 
@@ -28,6 +28,7 @@ function AppContent() {
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/tours/:id" element={<TourDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/search" element={<SearchResult />} />
       </Routes>
     </>
   );

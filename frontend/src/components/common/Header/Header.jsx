@@ -1,17 +1,32 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Logo from '../../../assets/logo.png'; // Cập nhật lại đường dẫn cho đúng
+import React, { useState } from 'react'; // Bổ sung useState
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Bổ sung useNavigate
+import Logo from '../../../assets/logo.png'; 
 import Search from '../../../assets/search.png';
 import User from '../../../assets/user.png';
 import './Header.css';
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate(); // Hook để điều hướng trang
+  
+  // State để quản lý từ khóa tìm kiếm
+  const [searchTerm, setSearchTerm] = useState('');
+
   const token = localStorage.getItem('access_token');
   const username = localStorage.getItem('username');
 
   // Hàm để kiểm tra xem link có đang active hay không
   const isActive = (path) => location.pathname === path;
+
+  // Hàm xử lý khi người dùng nhấn tìm kiếm
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      // Chuyển hướng sang trang của Hà kèm theo từ khóa q
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      setSearchTerm(''); // Reset ô nhập sau khi search
+    }
+  };
 
   return (
     <header className="header-container">
@@ -40,9 +55,20 @@ export default function Header() {
         </ul>
 
         <div className="navbar-actions">
-          <button className="btn-search">
-            <img src={Search} alt="search" />
-          </button>
+          {/* Bọc icon Search vào form để xử lý nhập liệu */}
+          <form className="search-wrapper" onSubmit={handleSearch} style={{ display: 'flex', alignItems: 'center', background: '#f5f5f5', borderRadius: '20px', padding: '2px 10px', marginRight: '10px' }}>
+            <input 
+              type="text" 
+              placeholder="Tìm tour..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{ border: 'none', background: 'transparent', outline: 'none', padding: '5px', width: '120px' }}
+            />
+            <button type="submit" className="btn-search" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+              <img src={Search} alt="search" />
+            </button>
+          </form>
+
           <Link to="/bookings" className="btn-book">Book Now ↗</Link>
           
           <div className="auth-section">

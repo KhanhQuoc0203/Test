@@ -8,6 +8,7 @@ class Tour(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Người tạo"
     )
+    address = models.CharField(max_length=255, default="Việt Nam")
     title = models.CharField(max_length=255, verbose_name="Tên Tour")
     description = models.TextField(verbose_name="Mô tả")
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name="Giá")

@@ -46,14 +46,14 @@ export default function Home() {
         ) : (
           <div className="tour-grid">
            {tours.map((tour) => (
-    /* 2. Bao bọc Card bằng Link, truyền ID vào đường dẫn */
+          /* 2. Bao bọc Card bằng Link, truyền ID vào đường dẫn */
             <Link to={`/tours/${tour.id}`} key={tour.id} className="tour-card-link">
               <div className="tour-card">
                 <div className="tour-image">
                   <img src={tour.image || 'https://via.placeholder.com/300x200'} alt={tour.name} />
                 </div>
                 <div className="tour-info">
-                  <h3>{tour.name}</h3>
+                  <h3>{tour.title}</h3>
                   <p className="tour-price">
                     {new Intl.NumberFormat('vi-VN').format(tour.price)} VNĐ
                   </p>

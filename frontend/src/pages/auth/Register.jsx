@@ -48,7 +48,7 @@ export default function Register() {
       });
 
       setErrorMsg('');
-      setSuccessMsg("🎉 Đăng ký thành công! Đang chuyển sang đăng nhập...");
+      setSuccessMsg("Đăng ký thành công! Đang chuyển sang đăng nhập...");
 
       setTimeout(() => {
         navigate('/login');

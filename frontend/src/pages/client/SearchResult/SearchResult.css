@@ -1,0 +1,131 @@
+.search-result-page {
+    /* Quan trọng: Đẩy nội dung xuống dưới Navbar cố định */
+    padding-top: 100px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.search-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.search-header h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.search-header h2 span {
+    color: #5bd423;
+    /* Màu xanh thương hiệu H2KT */
+}
+
+.result-count {
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+/* Lưới hiển thị Tour */
+
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+
+/* Card Tour */
+
+.search-tour-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.search-tour-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.location {
+    font-size: 14px;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.price {
+    font-weight: 700;
+    color: #ff8a00;
+    font-size: 16px;
+}
+
+.btn-view {
+    background-color: #5bd423;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-view:hover {
+    background-color: #4bb31d;
+}
+
+
+/* Trạng thái không có kết quả */
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 0;
+    color: #888;
+}
+
+.no-results-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
